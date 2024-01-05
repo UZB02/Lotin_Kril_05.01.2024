@@ -97,8 +97,6 @@ const data = {
   'X': 'Х',
   'Y': 'Й',
   'Z': 'З',
-  'Oʻ': 'Ў',
-  'Gʻ': 'Ғ',
   'Sh': 'Ш',
   'Ch': 'Ч',
   'O\'': 'Ў',
@@ -106,8 +104,6 @@ const data = {
   'Yo': 'Ё',
   'Yu': 'Ю',
   'Ya': 'Я',
-  'oʻ': 'ў',
-  'gʻ': 'ғ',
   'sh': 'ш',
   'ch': 'ч',
   'o\'': 'ў',
@@ -144,7 +140,44 @@ const data = {
   "'": "ъ",
   "sh": "ш",
   " ": " ",
-  "c": "c"
+  "c": "c",
+  "C": "C",
+  "w": "w",
+  "W": "W",
+  ",": ",",
+  ".": ".",
+  "?": "?",
+  "!": "!",
+  "-": "-",
+  "(": "(",
+  ")": ")",
+  "[": "[",
+  "]": "]",
+  "{": "{",
+  "}": "}",
+  "<": "<",
+  ">": ">",
+  "/": "/",
+  "*": "*",
+  "%": "%",
+  "^": "^",
+  "&": "&",
+  "$": "$",
+  "#": "#",
+  "@": "@",
+  "`": "`",
+  "'": "'",
+  '"': '"',
+  "«": "«",
+  "»": "»",
+  "No": "No",
+  "—": "—",
+  "–": "–",
+  "“": "“",
+  "”": "”",
+  "„": "„",
+  "‘": "‘",
+  "’": "’",
 }
 // const dataKril = {
 //   'А',
@@ -243,8 +276,20 @@ const textareaValue = () => {
         if (k.includes('sh')) {
           k = k.replace('sh', 'ш')
         }
+        if (k.includes('Sh')) {
+          k = k.replace('Sh', 'Ш')
+        }
+        if (k.includes('SH')) {
+          k = k.replace('SH', 'Ш')
+        }
         if (k.includes('ch')) {
           k = k.replace('ch', 'ч')
+        }
+        if (k.includes('Ch')) {
+          k = k.replace('Ch', 'Ч')
+        }
+        if (k.includes('CH')) {
+          k = k.replace('CH', 'Ч')
         }
         if (k.includes('ya')) {
           k = k.replace('ya', 'я')
@@ -255,20 +300,20 @@ const textareaValue = () => {
         if (k.includes('yo')) {
           k = k.replace('yo', 'ё')
         }
-        if(k.includes('g\'')){
+        if (k.includes('g\'')) {
           k = k.replace('g\'', 'ғ')
         }
-        if(k.includes('G\'')){
+        if (k.includes('G\'')) {
           k = k.replace('G\'', 'Ғ')
         }
-        if(k.includes('ts')){
-          k=k.replace('ts','ц')
+        if (k.includes('ts')) {
+          k = k.replace('ts', 'ц')
         }
-        if(k.includes('o\'')){
-          k=k.replace('o\'','ў')
+        if (k.includes('o\'')) {
+          k = k.replace('o\'', 'ў')
         }
-        if(k.includes('O\'')){
-          k=k.replace('O\'','Ў')
+        if (k.includes('O\'')) {
+          k = k.replace('O\'', 'Ў')
         }
       }
     }
