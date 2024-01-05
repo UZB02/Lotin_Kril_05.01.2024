@@ -45,9 +45,7 @@
 
         <textarea id="OrderNotes"
           class="mt-2 w-full h-full p-3 border rounded-lg border-gray-200 align-top shadow-lg sm:text-sm" rows="4"
-          v-model="result"
-           disabled
-           ></textarea>
+          v-model="result" disabled></textarea>
       </div>
     </div>
     <div class="buttons flex items-center justify-between">
@@ -59,8 +57,7 @@
         Tozalash
       </button>
 
-      <button
-      @click="copyText"
+      <button @click="copyText"
         class="inline-block rounded border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none  active:text-indigo-500"
         href="/download">
         Nusxalash
@@ -145,8 +142,82 @@ const data = {
   "z": "з",
   "ch": "ч",
   "'": "ъ",
-  "sh": "ш"
+  "sh": "ш",
+  " ": " ",
+  "c": "c"
 }
+// const dataKril = {
+//   'А',
+//   'Б',
+//   'Д',
+//   'Е',
+//   'Ф',
+//   'Г',
+//   'Ҳ',
+//   'И',
+//   'Ж',
+//   'К',
+//   'Л',
+//   'М',
+//   'Н',
+//   'О',
+//   'П',
+//   'Қ',
+//   'Р',
+//   'С',
+//   'Т',
+//   'У',
+//   'В',
+//   'Х',
+//   'Й',
+//   'З',
+//   'Ў',
+//   'Ғ',
+//   'Ш',
+//   'Ч',
+//   "Ў",
+//   "Ғ",
+//   'Ё',
+//   'Ю',
+//   'Я',
+//   'ў',
+//   'ғ',
+//   'ш',
+//   'ч',
+//   "ў",
+//   "ғ",
+//   'ё',
+//   'ю',
+//   'я',
+//   "a",
+//   "б",
+//   "c",
+//   "д",
+//   "э",
+//   "ф",
+//   "г",
+//   "х",
+//   "и",
+//   "ж",
+//   "к",
+//   "л",
+//   "м",
+//   "н",
+//   "о",
+//   "п",
+//   "қ",
+//   "р",
+//   "с",
+//   "т",
+//   "у",
+//   "в",
+//   "х",
+//   "й",
+//   "з",
+//   "ч"
+//   "ъ",
+//   "ш"
+// }
 const textareaValue = () => {
   let s = texarea.value.length
   c = s
@@ -163,13 +234,27 @@ const textareaValue = () => {
     // result.value = localStorage.getItem("lotin");
     let k = ""
     for (let i = 0; i < texarea.value.length; i++) {
-      const natija = texarea.value[i];
-      if (data.hasOwnProperty(natija)) {
-        // console.log(data[natija]);
-        k += data[natija]
-        console.log(k);
-      } else {
-        k += natija;
+      const letter = texarea.value[i];
+
+      for (const key in data) {
+        if (key == letter) {
+          k += letter
+        }
+        if (k.includes('sh')) {
+          k = k.replace('sh', 'ш')
+        }
+        if (k.includes('ch')) {
+          k = k.replace('ch', 'ч')
+        }
+      }
+    }
+    
+    for (let e = 0; e < texarea.value.length; e++) {
+      for (const key in data) {
+        if (key == texarea.value[e]) {
+          k = k.replace(texarea.value[e], data[key])
+
+        }
       }
     }
     result.value = k
@@ -188,6 +273,7 @@ const lotinKril = () => {
   document.querySelector('#lotinkril').style.color = '#fff';
   document.querySelector('#krillotin').style.background = '';
   document.querySelector('#krillotin').style.color = '';
+  textareaValue()
 }
 const krilLotin = () => {
   document.querySelector('#lotinkril').style.background = '';
@@ -198,7 +284,7 @@ const krilLotin = () => {
 }
 const copyText = () => {
   if (result.value === "") {
-      Swal.fire({
+    Swal.fire({
       position: "center",
       icon: "error",
       title: "Maydon bo'sh",
@@ -206,7 +292,7 @@ const copyText = () => {
       timer: 1500
     });
   } else {
-      navigator.clipboard.writeText(result.value)
+    navigator.clipboard.writeText(result.value)
     Swal.fire({
       position: "center",
       icon: "success",
