@@ -224,7 +224,7 @@ const textareaValue = () => {
   if (texarea.value.length > 100) {
     Swal.fire({
       title: 'Xatolik!',
-      text: 'Kiritilgan hariflar soni 20 tadan oshiq!',
+      text: 'Kiritilgan hariflar soni 100 tadan oshiq!',
       icon: 'error',
       confirmButtonText: 'Cool'
     });
@@ -246,9 +246,33 @@ const textareaValue = () => {
         if (k.includes('ch')) {
           k = k.replace('ch', 'ч')
         }
+        if (k.includes('ya')) {
+          k = k.replace('ya', 'я')
+        }
+        if (k.includes('yu')) {
+          k = k.replace('yu', 'ю')
+        }
+        if (k.includes('yo')) {
+          k = k.replace('yo', 'ё')
+        }
+        if(k.includes('g\'')){
+          k = k.replace('g\'', 'ғ')
+        }
+        if(k.includes('G\'')){
+          k = k.replace('G\'', 'Ғ')
+        }
+        if(k.includes('ts')){
+          k=k.replace('ts','ц')
+        }
+        if(k.includes('o\'')){
+          k=k.replace('o\'','ў')
+        }
+        if(k.includes('O\'')){
+          k=k.replace('O\'','Ў')
+        }
       }
     }
-    
+
     for (let e = 0; e < texarea.value.length; e++) {
       for (const key in data) {
         if (key == texarea.value[e]) {
