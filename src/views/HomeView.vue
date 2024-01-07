@@ -496,7 +496,7 @@ const clearTextareaValue = () => {
 
 const lotinKril = () => {
   localStorage.setItem("letter", "LK")
-  location.reload();
+  // location.reload();
   clearTextareaValue()
   lotinKrill.value = true
   krilLotinn.value = false
@@ -509,7 +509,7 @@ const lotinKril = () => {
 }
 const krilLotin = () => {
   localStorage.setItem("letter", "KL")
-   location.reload();
+  //  location.reload();
   clearTextareaValue()
   lotinKrill.value = false
   krilLotinn.value = true
