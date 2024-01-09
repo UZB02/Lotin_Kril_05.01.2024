@@ -10,14 +10,11 @@
     </div>
    </section>
 </template>
-<script>
-export default {
-    
-}
+<script setup>
 </script>
 <style>
-    .card{
-        background-color: yellow;
-        width: 100%;
-    }
+.card {
+    background-color: yellow;
+    width: 100%;
+}
 </style>
