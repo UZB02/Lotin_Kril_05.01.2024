@@ -30,7 +30,7 @@
             <span class="flex items-center justify-end mr-2">
               <!-- delete SVG -->
               <svg @click="clearTextareaValue" class="active:scale-95 hover:scale-105 cursor-pointer" clip-rule="evenodd"
-                fill="gray" width="25" height="25" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"
+                fill="red" width="25" height="25" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2"
                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="m4.015 5.494h-.253c-.413 0-.747-.335-.747-.747s.334-.747.747-.747h5.253v-1c0-.535.474-1 1-1h4c.526 0 1 .465 1 1v1h5.254c.412 0 .746.335.746.747s-.334.747-.746.747h-.254v15.435c0 .591-.448 1.071-1 1.071-2.873 0-11.127 0-14 0-.552 0-1-.48-1-1.071zm14.5 0h-13v15.006h13zm-4.25 2.506c-.414 0-.75.336-.75.75v8.5c0 .414.336.75.75.75s.75-.336.75-.75v-8.5c0-.414-.336-.75-.75-.75zm-4.5 0c-.414 0-.75.336-.75.75v8.5c0 .414.336.75.75.75s.75-.336.75-.75v-8.5c0-.414-.336-.75-.75-.75zm3.75-4v-.5h-3v.5z"
@@ -56,7 +56,7 @@
             <label for="OrderNotes" class="block text-sm font-medium"> {{ $t("result") }} </label>
             <span class="flex items-center justify-end mr-2">
               <!-- Copy SVG -->
-              <svg @click="copyText" fill="gray" class="transition-opacity active:scale-95 hover:scale-105 cursor-pointer"
+              <svg @click="copyText" fill="white" class="transition-opacity active:scale-95 hover:scale-105 cursor-pointer"
                 xmlns="http://www.w3.org/2000/svg" width="45" height="24" viewBox="0 0 24 24">
                 <path d="M22 6v16h-16v-16h16zm2-2h-20v20h20v-20zm-24 17v-21h21v2h-19v19h-2z" />
               </svg>
