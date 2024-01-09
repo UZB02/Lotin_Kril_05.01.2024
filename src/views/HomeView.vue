@@ -115,6 +115,7 @@ const texarea = ref(route.query.q || '')
 const result = ref(route.query.p || '')
 const lotinKrill = ref(true)
 const krilLotinn = ref(false)
+locale.value = 'LK'
 
 let c = 0
 const data = {
@@ -571,6 +572,9 @@ const lotinKril = () => {
   clearTextareaValue()
   lotinKrill.value = true
   krilLotinn.value = false
+  // if(lotinKrill){
+  //   locale.value = 'LK'
+  // }
   console.log(lotinKrill.value, "LK");
   console.log(krilLotinn.value, "KL");
   document.querySelector('#lotinkril').style.background = 'white';
@@ -657,7 +661,8 @@ textarea {
 
 @media screen and (min-width: 300px) and (max-width:400px) {
   header .container h1 {
-    font-size: 1.5em;
+    font-size: 1.3em;
+    text-align: center;
   }
 
   .container {
